@@ -11,18 +11,19 @@ def main():
     green = (0, 255, 0)
     ballX = 100
     ballY = 100
-    ballXspeed = 1
-    ballYspeed = 2
+    ballXspeed = 3
+    ballYspeed = 1
     diameter = 50
 
     pygame.init()
     screen = pygame.display.set_mode(size)
     clock = pygame.time.Clock()
 
-    # Create a Bubble object
+    # Create a Ball and Paddle object
     b = Ball(ballX, ballY, ballXspeed, ballYspeed, diameter, green)
     b2 = Ball(20, 20, 1, 1, 20, green)
-    p1 = Paddle(100, 10, 50, red)
+    p1 = Paddle(100, 15, 100, red)
+    p2 = Paddle(size[0]-100, 15, 100, red)
 
 
     while True:
@@ -33,6 +34,7 @@ def main():
         # Update the position of the bubble
         b.update(size, border)
         b2.update(size, border)
+        p1.update(size, border)
 
 
 
@@ -44,6 +46,7 @@ def main():
         b.draw(screen)
         b2.draw(screen)
         p1.draw(screen)
+        p2.draw(screen)
 
 
         # Update the entire canvas
