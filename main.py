@@ -34,7 +34,7 @@ def main():
         # Update the position of the bubble
         b.update(size, border)
         b2.update(size, border)
-        p1.update(size, border)
+        p1.update(size[1], border)
 
 
 

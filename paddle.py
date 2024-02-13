@@ -15,10 +15,13 @@ class Paddle:
         # Get mouse y position
         mouse_x, mouse_y = pygame.mouse.get_pos()
 
+        self.y = mouse_y - self.height / 2
+
         if self.y < 0:
             self.y = 0
         elif self.y > screen_size - screen_border - self.height:
-            self.y = screen_size- screen_border - self.height
-        else:
-            self.y = mouse_y - self.height/2
+            self.y = screen_size - screen_border - self.height
+
+
+
 
