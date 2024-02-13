@@ -1,16 +1,18 @@
 import pygame
 from ball import Ball
+from paddle import Paddle
 
 
 def main():
-    size = (800, 800)
-    border = 200
+    size = (1000, 800)
+    border = 100
     black = (0, 0, 0)
     red = (255, 0, 0)
-    xPos = 100
-    yPos = 100
-    xSpeed = 1
-    ySpeed = 2
+    green = (0, 255, 0)
+    ballX = 100
+    ballY = 100
+    ballXspeed = 1
+    ballYspeed = 2
     diameter = 50
 
     pygame.init()
@@ -18,8 +20,9 @@ def main():
     clock = pygame.time.Clock()
 
     # Create a Bubble object
-    b = Ball(xPos, yPos, xSpeed, ySpeed, diameter, red)
-    b2 = Ball(20, 20, 1, 1, 20, red)
+    b = Ball(ballX, ballY, ballXspeed, ballYspeed, diameter, green)
+    b2 = Ball(20, 20, 1, 1, 20, green)
+    p1 = Paddle(100, 10, 50, red)
 
 
     while True:
@@ -32,6 +35,7 @@ def main():
         b2.update(size, border)
 
 
+
         # Draw the canvas and bubble
         screen.fill((8, 143, 143))
         pygame.draw.rect(screen, black, [[0, 0], [size[0], size[1] - border]])
@@ -39,6 +43,7 @@ def main():
         # Call the draw method of the Bubble object
         b.draw(screen)
         b2.draw(screen)
+        p1.draw(screen)
 
 
         # Update the entire canvas

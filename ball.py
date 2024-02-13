@@ -31,13 +31,3 @@ class Ball:
             self.y = screen_size[1] - screen_border - self.diameter
             self.dy = -abs(self.dy)
 
-
-
-    def __del__(self):
-        pass
-
-    def identify(self):
-        pass
-
-    def __eq__(self, other):
-        pass
