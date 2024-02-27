@@ -2,6 +2,7 @@ import pygame
 
 class Paddle:
     def __init__(self, x, sx, sy, color):
+        # Initializes a paddle object with given parameters
         self.x = x
         self.y = 100
         self.width = sx
@@ -9,14 +10,11 @@ class Paddle:
         self.color = color
 
     def draw(self, screen):
+        # Draws the paddle on the screen
         pygame.draw.rect(screen, self.color, [[self.x, self.y], [self.width, self.height]])
 
     def update(self, screen_size, screen_border, pos):
-        """# Get mouse y position
-        mouse_x, mouse_y = pygame.mouse.get_pos()
-
-        self.y = mouse_y - self.height / 2"""
-
+        # Updates the position of the paddle and handles collisions with the screen borders
         self.y = pos
 
         if self.y < 0:
